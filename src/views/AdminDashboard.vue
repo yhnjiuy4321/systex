@@ -28,6 +28,8 @@ export default {
     handleUserManagement() {
       console.log('Navigating to User Management');
       // 在這裡可以導向用戶管理頁面
+      this.$router.push('/admin/EmployeesManagementPage');
+
     },
     handleSystemSettings() {
       console.log('Navigating to System Settings');
