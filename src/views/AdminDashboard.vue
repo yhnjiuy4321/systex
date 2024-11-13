@@ -3,19 +3,31 @@
     <h1>系統管理員後台</h1>
     <div class="admin-options">
       <div class="option-box">
-        <h3>用戶管理</h3>
-        <p>檢視和管理系統用戶。</p>
+        <h3>現職人員管理</h3>
+        <p>檢視和管理系統用戶</p>
         <button @click="handleUserManagement">進入</button>
       </div>
       <div class="option-box">
-        <h3>系統設置</h3>
-        <p>修改系統設定和偏好。</p>
-        <button @click="handleSystemSettings">進入</button>
+        <h3>權限管理</h3>
+        <p>管理各部門職位權限</p>
+        <button @click="handleFunction">進入</button>
       </div>
       <div class="option-box">
-        <h3>日誌查看</h3>
-        <p>檢視系統日誌記錄。</p>
-        <button @click="handleLogView">進入</button>
+        <h3>事項管理</h3>
+        <p>人員事項管理</p>
+        <button @click="handleAffairs">進入</button>
+      </div>
+
+      <div class="option-box">
+        <h3>離職人員管理</h3>
+        <p>管理離職人員</p>
+        <button @click="handleDeparture">進入</button>
+      </div>
+
+      <div class="option-box">
+        <h3>人員異動</h3>
+        <p>管理人員調職、停權、復權等等</p>
+        <button @click="handleChange">進入</button>
       </div>
     </div>
   </div>
@@ -27,17 +39,20 @@ export default {
   methods: {
     handleUserManagement() {
       console.log('Navigating to User Management');
-      // 在這裡可以導向用戶管理頁面
       this.$router.push('/admin/EmployeesManagementPage');
 
     },
-    handleSystemSettings() {
-      console.log('Navigating to System Settings');
-      // 在這裡可以導向系統設置頁面
+    handleFunction() {
+      this.$router.push('/admin/function');
     },
-    handleLogView() {
-      console.log('Navigating to Log View');
-      // 在這裡可以導向日誌查看頁面
+    handleAffairs() {
+      this.$router.push('/admin/AffairManage');
+    },
+    handleDeparture() {
+      this.$router.push('/admin/Departure');
+    },
+    handleChange() {
+      this.$router.push('/admin/staffChange');
     }
   }
 }
@@ -48,6 +63,7 @@ export default {
   padding: 2rem;
   background-color: #f5f5f5;
   min-height: 100vh;
+
 }
 
 h1 {
@@ -57,8 +73,10 @@ h1 {
 
 .admin-options {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: start;
   margin-top: 2rem;
+
 }
 
 .option-box {
@@ -68,6 +86,8 @@ h1 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 30%;
+  margin: 10px;
+  box-sizing: border-box;
 }
 
 .option-box h3 {

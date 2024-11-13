@@ -3,6 +3,10 @@ import { ElMessage } from 'element-plus'; // 引入 Element Plus 消息提示
 import LoginView from '../views/LoginView.vue';
 import AdminDashboard from '../views/AdminDashboard.vue';
 import AdminEmployeeManage from '../views/AdminEmployeeManage.vue';
+import FunctionPage from "@/views/FunctionPage.vue";
+import Affairpage from "@/views/AffairComponent.vue";
+import Change from "@/views/staffChange.vue";
+import Outstaff from "@/views/OutStaff.vue";
 
 const routes = [
     {
@@ -21,6 +25,27 @@ const routes = [
         name: 'EmployeesManagement',
         component: AdminEmployeeManage
     },
+    {
+        path: '/admin/function',
+        name: 'function',
+        component: FunctionPage
+    },
+    {
+        path: '/admin/AffairManage',
+        name: 'affair',
+        component: Affairpage
+    },
+    {
+        path: '/admin/Departure',
+        name: 'departure',
+        component: Outstaff
+    },
+    {
+        path: '/admin/staffChange',
+        name: 'change',
+        component: Change
+    }
+
 ];
 
 // Token 過期檢查函數

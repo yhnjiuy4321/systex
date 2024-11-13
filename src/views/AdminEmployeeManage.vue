@@ -148,7 +148,7 @@ const addFunction = () => {
         <div class="form-group">
           <label for="extension">功能:</label>
           <select v-model="selectedFunction" class="form-select">
-            <option disabled value="">－功能選擇－</option>
+            <option disabled value="">－業務範圍－</option>
             <option value="銷帳">銷帳</option>
             <option value="開冷氣">開冷氣</option>
             <option value="訂飲料">訂飲料</option>
