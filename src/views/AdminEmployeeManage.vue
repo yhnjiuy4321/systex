@@ -8,11 +8,11 @@
 
   <!-- 新增按鈕 -->
   <div class="tool">
-    <a href="#myModal" class="add">新增員工</a>
+    <a href="#createEmp" class="add">新增員工</a>
   </div>
 
   <!-- 新增員工表單 -->
-  <div id="myModal" class="modal">
+  <div id="createEmp" class="modal">
     <div class="modal-content">
       <a href="#" class="close">X</a>
       <h2>新增員工資料</h2>
@@ -116,6 +116,89 @@
       <td><a href="#delete"><i class="fas fa-trash" style="color:red;"></i></a></td>
     </tr>
     </table>
+
+  <!-- 調整員工表單 -->
+  <div id="adjust" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">X</a>
+      <h2>新增員工資料</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">姓名:</label>
+          <input type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="department">部門:</label>
+          <input type="text" id="department" name="department">
+        </div>
+        <div class="form-group">
+          <label for="position">職位:</label>
+          <input type="text" id="position" name="position">
+        </div>
+        <div class="form-group">
+          <label for="extension">分機:</label>
+          <input type="text" id="extension" name="extension">
+        </div>
+
+        <!-- 功能按鈕 -->
+        <div class="buttonGroup">
+          <button type="submit" class="send">提交</button>
+          <a href="#" class="down">取消</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 查詢員工表單 -->
+  <div id="see" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">X</a>
+      <h2>新增員工資料</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">姓名:</label>
+          <input type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="department">部門:</label>
+          <input type="text" id="department" name="department">
+        </div>
+        <div class="form-group">
+          <label for="position">職位:</label>
+          <input type="text" id="position" name="position">
+        </div>
+        <div class="form-group">
+          <label for="extension">分機:</label>
+          <input type="text" id="extension" name="extension">
+        </div>
+
+        <!-- 功能按鈕 -->
+        <div class="buttonGroup">
+          <button type="submit" class="send">提交</button>
+          <a href="#" class="down">取消</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 刪除員工 -->
+  <div id="delete" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">X</a>
+      <h2>刪除資料</h2>
+      <form>
+
+        <a>是否刪除資料?????</a>
+
+        <!-- 功能按鈕 -->
+        <div class="buttonGroup">
+          <button type="submit" class="send">提交</button>
+          <a href="#" class="down">取消</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
 
 </template>
 
