@@ -1,5 +1,15 @@
 <script setup>
+import { ref } from 'vue';
 
+const selectedFunction = ref('');
+const functionsList = ref([]);
+
+const addFunction = () => {
+  if (selectedFunction.value) {
+    functionsList.value.push(selectedFunction.value);
+    selectedFunction.value = '';
+  }
+};
 
 </script>
 <template>
@@ -125,19 +135,28 @@
       <form>
         <div class="form-group">
           <label for="name">姓名:</label>
-          <input type="text" id="name" name="name">
+          <label for="name">王逢甲</label>
         </div>
         <div class="form-group">
           <label for="department">部門:</label>
-          <input type="text" id="department" name="department">
+          <label for="name">業務部</label>
         </div>
         <div class="form-group">
           <label for="position">職位:</label>
-          <input type="text" id="position" name="position">
+          <label for="name">組員</label>
         </div>
         <div class="form-group">
-          <label for="extension">分機:</label>
-          <input type="text" id="extension" name="extension">
+          <label for="extension">功能:</label>
+          <select v-model="selectedFunction" class="form-select">
+            <option disabled value="">－功能選擇－</option>
+            <option value="銷帳">銷帳</option>
+            <option value="開冷氣">開冷氣</option>
+            <option value="訂飲料">訂飲料</option>
+          </select>
+          <button type="button" @click="addFunction">＋</button>
+        </div>
+        <div class="func_box">
+          <div v-for="func in functionsList" :key="func">{{ func }}</div>
         </div>
 
         <!-- 功能按鈕 -->
@@ -167,8 +186,8 @@
           <label for="position">職位:</label>
           <input type="text" id="position" name="position">
         </div>
-        <div class="form-group">
-          <label for="extension">分機:</label>
+        <div class="form-function">
+          <label for="extension">功能:</label>
           <input type="text" id="extension" name="extension">
         </div>
 
@@ -334,10 +353,33 @@
     border-radius: 10px;
   }
 
+  .form-function,
   .form-group {
     display: flex;
     margin-bottom: 7px;
     margin-top: 7px;
+  }
+
+  .func_box{
+    display: grid;
+    width: 100%;
+    height: 100px;
+    border: #666666 1px solid;
+    gap: 5px;
+    border-radius: 5px;
+    overflow-y: auto;
+    padding: 5px;
+  }
+
+  .form-group button{
+    margin-left: 5px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
   }
 
   label {
