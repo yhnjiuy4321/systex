@@ -29,6 +29,14 @@
         <p>管理人員調職、停權、復權等等</p>
         <button @click="handleChange">進入</button>
       </div>
+
+      <div class="option-box">
+        <h3>部門與職位</h3>
+        <p>管理部門與職位相關事項</p>
+        <button @click="handle_dp">進入</button>
+      </div>
+
+
     </div>
   </div>
 </template>
@@ -53,6 +61,9 @@ export default {
     },
     handleChange() {
       this.$router.push('/admin/staffChange');
+    },
+    handle_dp() {
+      this.$router.push('/admin/dpDashboard');
     }
   }
 }
@@ -74,7 +85,7 @@ h1 {
 .admin-options {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: space-around;
   margin-top: 2rem;
 
 }

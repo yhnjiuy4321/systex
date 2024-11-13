@@ -7,6 +7,9 @@ import FunctionPage from "@/views/FunctionPage.vue";
 import Affairpage from "@/views/AffairComponent.vue";
 import Change from "@/views/staffChange.vue";
 import Outstaff from "@/views/OutStaff.vue";
+import DepartmentView  from "@/views/DepartmentManagement.vue";
+import PositionView from "@/views/PositionManagement.vue";
+import dpDashboard from "@/views/Dep_Pos_dashboard.vue";
 
 const routes = [
     {
@@ -44,6 +47,21 @@ const routes = [
         path: '/admin/staffChange',
         name: 'change',
         component: Change
+    },
+    {
+        path: '/admin/dpDashboard',
+        name: 'dpDashboard',
+        component: dpDashboard
+    },
+    {
+        path: '/admin/departmentManagement',
+        name: 'departmentManagement',
+        component: DepartmentView
+    },
+    {
+        path: '/admin/positionManagement',
+        name: 'positionManagement',
+        component: PositionView
     }
 
 ];

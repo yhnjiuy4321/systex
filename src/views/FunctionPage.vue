@@ -3,7 +3,7 @@
 
     <!--標題-->
     <div class="title">
-      <h1>權限總攬</h1>
+      <h1>權限總覽</h1>
     </div>
 
     <div class="tool">
@@ -43,7 +43,7 @@
 -->
 
       <!--搜尋-->
-      <el-input v-model="search" placeholder="請輸入權限名稱搜尋" style="width: 200px;"></el-input>
+      <el-input v-model="search" placeholder="請輸入功能名稱搜尋" style="width: 200px;"></el-input>
 
       <!--部門選擇-->
       <el-select v-model="filter.department" placeholder="請選擇部門" style="width: 200px;">
@@ -64,10 +64,9 @@
 
     <el-table :data="customers">
       <el-table-column prop="id" label="編號" width="120"></el-table-column>
-      <el-table-column prop="name" label="名稱" width="120"></el-table-column>
       <el-table-column prop="department" label="部門" width="120"></el-table-column>
       <el-table-column prop="position" label="職位" width="120"></el-table-column>
-      <el-table-column prop="instruction" label="說明" width="250"></el-table-column>
+      <el-table-column prop="instruction" label="功能說明" width="250"></el-table-column>
 
       <el-table-column label="編輯" width="80">
         <template #default="scope">
@@ -119,11 +118,15 @@ import { defineComponent, ref } from 'vue';
 export default defineComponent({
   setup() {
     const customers = ref([
-      { id: 'f0001', name: '帳戶查詢', department: '業務部', position: '主管', instruction: '查詢客戶的帳戶餘額、交易明細' },
-      { id: 'f0002', name: '客戶管理', department: '業務部', position: '主管', instruction: '新增、修改、刪除客戶資料' },
-      { id: 'f0003', name: '交易記錄', department: '業務部', position: '主管', instruction: '查詢客戶的交易記錄' },
-      { id: 'f0004', name: '報表查詢', department: '業務部', position: '主管', instruction: '查詢各種報表' },
-      { id: 'f0005', name: '系統設定', department: '業務部', position: '主管', instruction: '設定系統參數' },
+      { id: 'A0001',  department: '業務部', position: '經理', instruction: '查詢客戶的帳戶餘額、交易明細；新增、修改、刪除客戶資料' },
+      { id: 'A0002',  department: '業務部', position: '科長', instruction: '查詢客戶的帳戶餘額、交易明細 ' },
+      { id: 'A0003',  department: '業務部', position: '組員', instruction: '查詢客戶的交易記錄' },
+      { id: 'A0004',  department: '消金部', position: '經理', instruction: '審核貸款申請、客戶資料查詢、核准貸款' },
+      { id: 'A0005',  department: '消金部', position: '科長', instruction: '審核貸款申請、客戶資料查詢' },
+      { id: 'A0006',  department: '消金部', position: '組員', instruction: '客戶資料查詢' },
+      { id: 'A0007',  department: '信貸部', position: '經理', instruction: '客戶信用資料查詢、信貸申請初步審核、信貸核准' },
+      { id: 'A0008',  department: '信貸部', position: '科長', instruction: '客戶信用資料查詢、信貸申請初步審核' },
+      { id: 'A0009',  department: '信貸部', position: '組員', instruction: '客戶信用資料查詢' },
     ]);
 
 
